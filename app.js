@@ -26,5 +26,5 @@ app.use(function(req, res, next) {
 })
 
 app.use(function(req, res, next) {
-    res.send('Kiss my ass')
+    res.send(app.get('env'))
 })
