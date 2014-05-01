@@ -5,10 +5,11 @@
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body>
+<body ng-controller="MainController">
   <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+    <li><a href="#/contacts">contacts</a></li>
+    <li><a href="#/about-us">about-us</a></li>
+    <li><a href="#/main">main2</a></li>
   </ul>
 
   <div ng-view></div>
@@ -25,5 +26,11 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+
+    <!--Services-->
+
+
+    <!--Controllers-->
+    <script src="js/controllers/MainController.js"></script>
 </body>
 </html>
