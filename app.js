@@ -21,7 +21,7 @@ app.set('views', __dirname + '/views');
 
 // Example static media directory
 
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname + '/views')));
 
 // Simple JSON file parser
 var get_JSON = function(path) {
@@ -37,7 +37,7 @@ var render = function(res, view, json_path) {
 
 // Routes
 app.get('/', function(req, res) {
-    render(res, 'index-async', 'data/simple.json');
+    render(res, 'index', 'data/simple.json');
 });
 
 // Go!
