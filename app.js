@@ -20,14 +20,15 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 // Example static media directory
-
+app.use(express.logger());
 app.use(express.static(path.join(__dirname + '/views')));
+app.use(express.favicon(path.join(__dirname, 'favicon.ico')));
 
 // Simple JSON file parser
 var get_JSON = function(path) {
     var fileContents = fs.readFileSync(path, 'utf8');
     return JSON.parse(fileContents);
-}
+};
 
 // Wrapper for template render and JSON parser
 var render = function(res, view, json_path) {
@@ -39,7 +40,11 @@ var render = function(res, view, json_path) {
 app.get('/', function(req, res) {
     render(res, 'index', 'data/simple.json');
 });
+// Routes
+app.get('/example', function(req, res) {
+    res.send({1:1});
+});
 
 // Go!
-app.listen(3000);
+app.listen(3001);
 console.log('Listening on port 3000');
